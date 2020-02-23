@@ -27,6 +27,6 @@ jobs:
       with:
         BASE_BRANCH: master   
         BRANCH: gh-pages
-        FOLDER: build
+        FOLDER: dist
         CLEAN: true
         SSH: true # SSH must be set to true so the deploy action knows which protocol to deploy with.
