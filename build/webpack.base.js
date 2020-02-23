@@ -3,7 +3,6 @@ const path = require('path')
 const sass = require('sass')
 const Fiber = require('fibers')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
@@ -16,7 +15,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html'
     }),
-    new MiniCssExtractPlugin(),
     new VueLoaderPlugin(),
     new webpack.HashedModuleIdsPlugin()
   ],
@@ -38,11 +36,10 @@ module.exports = {
         ]
       }, {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader']
       }, {
         test: /\.(scss|sass)$/,
         use: [
-          MiniCssExtractPlugin.loader,
           'style-loader',
           'css-loader',
           {
