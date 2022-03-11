@@ -3,9 +3,10 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
-
 export default {
+  props: {
+    name: String
+  },
   setup (props, {emit}) {
     const onClick = () => {
       console.log('clicked')
@@ -13,8 +14,8 @@ export default {
     }
 
     return {
-      onClick,
-      props
+      props,
+      onClick
     }
   } 
 }
